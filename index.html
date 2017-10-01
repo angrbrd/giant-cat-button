@@ -9,6 +9,8 @@
 
         <!-- Bootstrap CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
         <!-- Styling CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
@@ -45,17 +47,29 @@
                         </g>
                     </svg>
 
+                    <div id="grumpy-status">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value="">Feeling particularly grumpy?</label>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Cat GIF -->
                 <div class="col col-sm-6">
 
                     <p id="click-instructions">Click the giant cat button!</p>
-                    <img src="http://placehold.it/150x150" alt="Cat GIF" id="kitty-img">
+                    <img src="" id="kitty-img">
 
                 </div>
             </div>
         </div>
+
+        <footer class="footer navbar-fixed-bottom" id="my-footer">
+            <div class="container">
+                <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            </div>
+        </footer>
 
         <!-- jQuery CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -65,10 +79,6 @@
 
         <!-- Main on-click event handler -->
         <script type="text/javascript">
-            $(function() {
-                $("#kitty-img").hide();
-            });
-
             // Event listener for our cat-button
             $("#kitty-svg").on("click", function() {
                 // Storing our giphy API URL for a random cat image
