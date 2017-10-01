@@ -2,6 +2,16 @@ body {
     background-image: url("../img/background_0.3.png");
 }
 
+#click-instructions {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: 'Give You Glory', cursive;
+    font-size: 55px;
+    text-align: center;
+    color: #FF0080;
+}
+
 #kitty-svg { 
     padding: 10px;
 }
@@ -11,4 +21,20 @@ body {
     margin: 0 auto;
     width: 90%;
     padding: 20px;
+}
+
+#grumpy-status {
+    display: block;
+    margin: 0 auto;
+    font-family: 'Give You Glory', cursive;
+    font-size: 20px;
+    text-align: center;
+}
+
+#my-footer {
+    background: #f2f2f2;
+    color: #868e96;
+    opacity: 0.3;
+    text-align: right;
+    font-size: 10px;
 }
