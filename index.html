@@ -20,8 +20,7 @@
                 <div class="col col-sm-6">
 
                     <!-- Ugly, but embed the svg specification so that we can apply CSS styling -->
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    width="413.928px" height="413.928px" viewBox="0 0 413.928 413.928" style="enable-background:new 0 0 413.928 413.928; fill: red"
+                    <svg version="1.1" id="kitty-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 413.928 413.928" style="enable-background:new 0 0 413.928 413.928"
                     xml:space="preserve">
                         <g>
                             <g>
@@ -51,7 +50,8 @@
                 <!-- Cat GIF -->
                 <div class="col col-sm-6">
 
-                    <img src="http://placehold.it/150x150" alt="Placeholder" class="img-thumbnail">
+                    <p id="click-instructions">Click the giant cat button!</p>
+                    <img src="http://placehold.it/150x150" alt="Cat GIF" id="kitty-img">
 
                 </div>
             </div>
@@ -62,6 +62,39 @@
 
         <!-- Bootstrap JavaScript CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Main on-click event handler -->
+        <script type="text/javascript">
+            $(function() {
+                $("#kitty-img").hide();
+            });
+
+            // Event listener for our cat-button
+            $("#kitty-svg").on("click", function() {
+                // Storing our giphy API URL for a random cat image
+                var queryURL = "http://api.giphy.com/v1/gifs/random?tag=cat&api_key=dc6zaTOxFJmzC&limit=1";
+
+                // Perfoming an AJAX GET request to our queryURL
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).done(function(response) {
+                    // Saving the image_original_url property
+                    var imageUrl = response.data.image_original_url;
+
+                    // Updating the image displayed
+                    $("#kitty-img").attr("src", imageUrl);
+                    $("#kitty-img").show();
+                    $("#click-instructions").hide();
+                });
+
+                // Generate random hex color code
+                var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+
+                // Modify kitty svg color
+                $(this).css("fill", randomColor);
+            });
+        </script>
     </body>
 
 </html>
