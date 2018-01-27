@@ -2,9 +2,9 @@
 $("#kitty-svg").on("click", function() {
     // Store our giphy API URL for a random cat image
     if ($("#grumpy-checkbox").is(":checked")) { // get random grumpy cat
-        var queryURL = "https://api.giphy.com/v1/gifs/random?tag=grumpy%20cat&api_key=dc6zaTOxFJmzC&limit=1";
+        var queryURL = "https://api.giphy.com/v1/gifs/random?tag=grumpy%20cat&api_key=SltgURaeSgAHQ8FkTvWpbgKL26eSJ6Fw&limit=1";
     } else { // get random cat
-        var queryURL = "https://api.giphy.com/v1/gifs/random?tag=cat&api_key=dc6zaTOxFJmzC&limit=1";
+        var queryURL = "https://api.giphy.com/v1/gifs/random?tag=cat&api_key=SltgURaeSgAHQ8FkTvWpbgKL26eSJ6Fw&limit=1";
     }
 
     // Perfoming an AJAX GET request to our queryURL
